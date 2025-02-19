@@ -130,12 +130,12 @@ class MainWindow(QMainWindow):
         self.ibre_dikilme.setAlignment(Qt.AlignCenter)
         self.ibre_dikilme.move(1365, 20)
 
-        self.ibre_gyroscope = QLabel(tab)
-        pixmap_9 = QPixmap("images/ibre5.png")
+        self.ibre_yatis = QLabel(tab)
+        pixmap_9 = QPixmap("images/ibre4.png")
         scaled_pixmap_9 = pixmap_9.scaled(200, 300, Qt.KeepAspectRatio, Qt.SmoothTransformation)
-        self.ibre_gyroscope.setPixmap(scaled_pixmap_9)
-        self.ibre_gyroscope.setAlignment(Qt.AlignCenter)
-        self.ibre_gyroscope.move(1645, 20)
+        self.ibre_yatis.setPixmap(scaled_pixmap_9)
+        self.ibre_yatis.setAlignment(Qt.AlignCenter)
+        self.ibre_yatis.move(1645, 20)
 
 
         self.ibre_voltaj = QLabel(tab)
@@ -152,10 +152,31 @@ class MainWindow(QMainWindow):
         self.ibre_amper.setPixmap(scaled_pixmap_8)
         self.ibre_amper.setAlignment(Qt.AlignCenter)
         self.ibre_amper.setStyleSheet("background: transparent;")
-        self.ibre_amper.move(1080, 400)
+        self.ibre_amper.move(1082, 400)
 
+        self.yan_goruntu = QLabel(tab)
+        pixmap_12 = QPixmap("images/yan.png")
+        scaled_pixmap_12 = pixmap_12.scaled(125, 300, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        self.yan_goruntu.setPixmap(scaled_pixmap_12)
+        self.yan_goruntu.setAlignment(Qt.AlignCenter)
+        self.yan_goruntu.setStyleSheet("background: transparent;")
+        self.yan_goruntu.move(1400, 96)
 
+        self.ust_goruntu = QLabel(tab)
+        pixmap_13 = QPixmap("images/ust.png")
+        scaled_pixmap_13 = pixmap_13.scaled(100, 300, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        self.ust_goruntu.setPixmap(scaled_pixmap_13)
+        self.ust_goruntu.setAlignment(Qt.AlignCenter)
+        self.ust_goruntu.setStyleSheet("background: transparent;")
+        self.ust_goruntu.move(441, 88)
 
+        self.on_goruntu = QLabel(tab)
+        pixmap_14 = QPixmap("images/on.png")
+        scaled_pixmap_14 = pixmap_14.scaled(125, 300, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        self.on_goruntu.setPixmap(scaled_pixmap_14)
+        self.on_goruntu.setAlignment(Qt.AlignCenter)
+        self.on_goruntu.setStyleSheet("background: transparent;")
+        self.on_goruntu.move(1682, 110)
 
         self.imu_labels = ["GPS","INS","MAG","AHRS","EKF","PRE","SICAKLIK"]
         self.imu_frames = []
@@ -274,9 +295,9 @@ class MainWindow(QMainWindow):
         label_dikilme_yazi.setStyleSheet("color: white; font-weight: bold;")
         label_dikilme_yazi.move(1433, 220)
 
-        label_horizon_yazi = QLabel("HORIZON", tab)
+        label_horizon_yazi = QLabel("YATIŞ", tab)
         label_horizon_yazi.setStyleSheet("color: white; font-weight: bold;")
-        label_horizon_yazi.move(1710, 220)
+        label_horizon_yazi.move(1727, 220)
 
         self.dis_sicaklik_frame = QFrame(tab)
         self.dis_sicaklik_frame.setFrameShape(QFrame.Box)
@@ -293,10 +314,10 @@ class MainWindow(QMainWindow):
         label_dis_sicaklik_yazi.move(1730, 974)
 
         self.global_altitude = altitude_inducator.ScaleWidget(tab)
-        self.global_altitude.setGeometry(600, 200, 50, 600)
+        self.global_altitude.setGeometry(570, 240, 50, 600)
 
         self.relative_altitude = altitude_inducator.ScaleWidget(tab)
-        self.relative_altitude.setGeometry(400, 252, 50, 550)
+        self.relative_altitude.setGeometry(370, 292, 50, 550)
 
         self.throttle = altitude_inducator.ScaleWidget(tab)
         self.throttle.setGeometry(1300, 300, 50, 400)
@@ -321,11 +342,11 @@ class MainWindow(QMainWindow):
         for i in range(0, 301, 25):
             label = QLabel(str(i), tab)
             label.setStyleSheet("color: white; font-weight: bold; font-size: 10px")
-            label.move(580, int(772 - (i * 1.854)))
+            label.move(550, int(812 - (i * 1.854)))
         for i in range(0, 301, 25):
             label = QLabel(str(i), tab)
             label.setStyleSheet("color: white; font-weight: bold; font-size: 10px")
-            label.move(380, 772 - int((i * 1.68)))
+            label.move(350, 812 - int((i * 1.68)))
 
         for i in range(0, 101, 10):
             label = QLabel(str(i), tab)
@@ -335,7 +356,7 @@ class MainWindow(QMainWindow):
         self.yukselik_etiketi = QFrame(tab)
         self.yukselik_etiketi.setFrameShape(QFrame.Box)
         self.yukselik_etiketi.setStyleSheet("background-color: #000000; border: 2px solid white;")
-        self.yukselik_etiketi.setFixedSize(50, 20)
+        self.yukselik_etiketi.setFixedSize(25, 20)
         self.yukselik_etiketi.move(640, 772)
 
         self.label_yukseklik_etiketi = QLabel("YUKSEKLIK", self.yukselik_etiketi)
@@ -347,17 +368,17 @@ class MainWindow(QMainWindow):
 
 
         self.yellow_arrow = yellow_arrow.YellowArrow(tab)
-        self.yellow_arrow.setGeometry(100, 100, 100, 100)  # Adjust position and size as needed
+        self.yellow_arrow.setGeometry(100, 100, 100, 80)  # Adjust position and size as needed
         self.yellow_arrow.set_angle(270)
         self.yellow_arrow.move(605,500)
 
         self.yellow_arrow_2 = yellow_arrow.YellowArrow(tab)
-        self.yellow_arrow_2.setGeometry(100, 100, 100, 100)  # Adjust position and size as needed
+        self.yellow_arrow_2.setGeometry(100, 100, 100, 80)  # Adjust position and size as needed
         self.yellow_arrow_2.set_angle(270)
         self.yellow_arrow_2.move(405, 500)
 
         self.yellow_arrow_throttle = yellow_arrow.YellowArrow(tab)
-        self.yellow_arrow_throttle.setGeometry(100, 100, 100, 100)  # Adjust position and size as needed
+        self.yellow_arrow_throttle.setGeometry(100, 100, 100, 80)  # Adjust position and size as needed
         self.yellow_arrow_throttle.set_angle(270)
         self.yellow_arrow_throttle.move(1302, 630)
 
@@ -461,6 +482,8 @@ class MainWindow(QMainWindow):
         self.label_amper.move(1151, 554)
 
 
+
+
         tab.setStyleSheet("background-color: #000000;")
 
 
@@ -486,10 +509,10 @@ class MainWindow(QMainWindow):
     def update_altitude(self, relative_alt):
         global_yukseklik = int(relative_alt)
         self.label_yukseklik_etiketi.setText(f"{global_yukseklik}")
-        yeni_y = 772 - (global_yukseklik * 1.9)
-        yeni_y = max(50, min(yeni_y, 772))
-        self.yukselik_etiketi.move(660, int(yeni_y))
-        self.yellow_arrow.move(605, int(yeni_y - 40))
+        yeni_y = 819 - (global_yukseklik * 1.9)
+        yeni_y = max(50, min(yeni_y, 819))
+        self.yukselik_etiketi.move(638, int(yeni_y-10))
+        self.yellow_arrow.move(575, int(yeni_y - 40))
 
     def update_throttle(self, chan3_raw):
         throttle = int(chan3_raw)
